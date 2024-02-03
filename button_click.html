@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Button Click Javascript</title>
+</head>
+<body>
+    <button> Click Here!</button>
+
+
+<script>
+    // Find the button element in the page
+    let button = document.querySelector('button')
+
+    // alternative function writing:
+    // function showAlert() {
+    //      alert('You clicked the button!')
+    // }
+    // Add an event listener for click events, with a callback function
+    // The callback function runs when the event (clicking the button) happens
+    button.addEventListener('click', function(){
+        alert('You clicked the button!')
+        //button.innerHTML = 'You clicked the button!'
+        //button.style.backgroundColor = 'red'
+        button.remove()
+        })
+
+</script>
+
+</body>
+</html>

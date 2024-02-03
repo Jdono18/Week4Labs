@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Bootstrap Element</title>
+</head>
+<body>
+<div class="container-fluid">
+    <h1> Computer Programming </h1>
+
+    <h2 id="width"></h2>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="computer.jpg" alt height="530" width="800">
+        </div>
+    <div class="col-md-6">
+         <h2> A list of programming languages</h2>
+         <ul>
+             <li> Java</li>
+             <li> C#</li>
+             <li> Python</li>
+         </ul>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <h2>Java</h2>
+            <p> Java is a compiled, OO language</p>
+        </div>
+
+        <div class="col-sm-4">
+            <h2>C#</h2>
+            <p> C# is also a compiled, OO language</p>
+        </div>
+
+        <div class="col-sm-4">
+            <h2>Python</h2>
+            <p>Python is an interpreted language</p>
+        </div>
+
+    </div>
+
+</div>
+</div>
+</body>
+
+<script>
+    function displayWidth() {
+        let width = document.body.scrollWidth
+        let widthDisplayEl = document.querySelector('#width')
+        widthDisplayEl.innerHTML = `Window width = ${width} pixels`
+    }
+        displayWidth()
+
+        window.addEventListener('resize', displayWidth)
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create addEventListener</title>
+</head>
+
+<body>
+<p>Please enter some text to add to the list</p>
+<input type="text" id="text">
+<button id="save-to-list">Save</button>
+
+<button id="clear-text">Clear</button>
+
+<ul id="list">
+
+</ul>
+
+<script>
+
+    let saveButton = document.querySelector('#save-to-list')
+    let textInput = document.querySelector('#text')
+    let list = document.querySelector('#list')
+    let clearListButton = document.querySelector('#clear-text')
+
+    let numberOfItemsInList = 0 // tracks numbers in list
+
+    document.addEventListener('keyup', function(){
+        if (event.keyCode == 13){
+            saveButton.click()
+        }
+    })
+
+    clearListButton.addEventListener('click', function(){
+        list.innerHTML = ''
+        numberOfItemsInList = 0
+    })
+
+    saveButton.addEventListener('click', function() {
+        // read the text in the input
+        let newText = textInput.value
+        // validate user has typed in some text
+        if(newText.length < 1){
+            alert('Your list item is too short (minimum of 1 character required')
+            return
+        }
+
+
+        // If statement validating a max of 10 list items
+        if(numberOfItemsInList >= 10){
+            alert('That is too many items (max of 10 allowed)')
+            return
+        }
+        // read the text in the input
+        let text = textInput.value
+        // create new li element
+        let listItem = document.createElement('li')
+        // the li element text should be the text from the input
+        listItem.innerHTML = text
+        // add the new li element as a child of the ul element
+        list.appendChild(listItem)
+        // increase count of list items by 1
+        numberOfItemsInList = numberOfItemsInList + 1
+        // clears the text input box
+        textInput.value = ''
+
+
+    })
+
+</script>
+
+</body>
+
+</html>
+
+</script>
+
+</body>
+</html>
