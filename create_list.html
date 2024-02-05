@@ -13,7 +13,7 @@
 
 <body>
 <p>Please enter some text to add to the list</p>
-<input type="text" id="text">
+<input id="text" type="text" >
 <button id="save-to-list">Save</button>
 
 <button id="clear-text">Clear</button>
@@ -32,7 +32,7 @@
     let numberOfItemsInList = 0 // tracks numbers in list
 
     document.addEventListener('keyup', function(){
-        if (event.keyCode == 13){
+        if (event.keyCode == 13 || event.key == 'Enter') {
             saveButton.click()
         }
     })
@@ -70,13 +70,9 @@
         // clears the text input box
         textInput.value = ''
 
-        let lis = document.querySelectorAll('li')
-
-        for (let i=0; i<lis.length; i=i+1){
-            lis[i].addEventListener('click', function (){
-                lis[i].classList.toggle('selected')
-            })
-        }
+    listItem.addEventListener('click', function(){
+        listItem.classList.toggle('selected')
+    })
 
     })
 

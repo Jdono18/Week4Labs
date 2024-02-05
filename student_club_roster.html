@@ -118,12 +118,9 @@
 
         // highlight individual students in the 'student-list' ID
 
-        let lis = document.querySelectorAll('li')
-        for (let i=0; i<lis.length; i=i+1){
-            lis[i].addEventListener('click', function (){
-                lis[i].classList.toggle('selected')
-            })
-        }
+        newStudentListItem.addEventListener('click', function(){
+            newStudentListItem.classList.toggle('selected')
+        })
 
 
     })
