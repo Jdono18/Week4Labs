@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
     <title>Create addEventListener</title>
+
+    <style>
+        .selected {
+            text-decoration: line-through;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -63,6 +70,13 @@
         // clears the text input box
         textInput.value = ''
 
+        let lis = document.querySelectorAll('li')
+
+        for (let i=0; i<lis.length; i=i+1){
+            lis[i].addEventListener('click', function (){
+                lis[i].classList.toggle('selected')
+            })
+        }
 
     })
 
@@ -72,7 +86,3 @@
 
 </html>
 
-</script>
-
-</body>
-</html>

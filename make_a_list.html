@@ -8,8 +8,6 @@
 <!-- box for user to type something in, defaults to the text entry-->
 <label for="new-text">Enter your text</label>
 <input id="new-text">
-
-
 <!-- an empty list below, contents will be created with JavaScript-->
 <!-- based on the data the user enters-->
 <!-- need to give every element that JavaScript will interact with, a way to find that element -->
@@ -22,8 +20,6 @@
 <button id="add-new-text"> Add text to list </button>
 <button id="clear-all-list"> Clear all list items</button>
 
-
-
 <script>
     let addNewTextButton = document.querySelector('#add-new-text')
     let newTextInput = document.querySelector('#new-text')
@@ -35,19 +31,16 @@
 
     clearListButton.addEventListener('click', function(){
         listOfText.innerHTML = ''
-        numberOfItemsInList = 0
-    // a list with nothing in it, has innerHTML of empty string
+        numberOfItemsInList = 0 // a list with nothing in it, has innerHTML of empty string
     }) // to do - set the numberOfListItemsInList to 0
 
     addNewTextButton.addEventListener('click', function(){
-
         // Validation always goes first in a function
         // do we have too many items
         if (numberOfItemsInList >=10) {
             alert('That is too many things.')
             return // stop processing this function - don't proceed to the code below
         }
-
     //  the value of a text input is the text it displays - read and write the value
         let newTextEntered = newTextInput.value  // read the text entered in the input element
 
@@ -57,32 +50,19 @@
             // to do show an alert and return stop processing ??
         }
         if (newTextEntered.length < 1) {
-            //alert('Your list item is too short (minimum 1 character required')
-            return
-            //don't show an alert,
-            // return and stop processing
+            //alert('Your list item is too short (minimum 1 character required)
+            return //don't show an alert, return and stop processing
         }
         let newLiElement = document.createElement('li')
         // configure and customize this element - what text will it display
         newLiElement.innerHTML = newTextEntered
-
         // where to place this element on the page?
         listOfText.appendChild(newLiElement)
         // increase count of items by 1
         numberOfItemsInList = numberOfItemsInList + 1
-
         // clear the input by setting the value to am empty string
         newTextInput.value = ''
     })
-    /* Question 1, Create List, 4 points
-
-
-Part 1c: Prevent the user adding more than 10 items to the list. If the clear button is clicked, the user may keep adding items.
-Part 1d:  Add validation using JavaScript. The form should only accept text of length between 1 and 50 characters.
-Ignore the user input if there is no text entered
-Display an alert error message if it the text too long - more than 50 characters. Do not clear the text in the input.*/
-
-
 
 </script>
 
