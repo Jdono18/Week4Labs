@@ -65,13 +65,7 @@
     let numberOfStudents = 0
     studentCountSpanElement.innerHTML = numberOfStudents
 
-    // remove student function
-    removeStudents.addEventListener('click', function(){
-        studentClubMemberList.innerHTML = ''
-        numberOfStudents = 0
-        studentCountSpanElement.innerHTML = numberOfStudents
 
-    })
     // add new student function + validation
     newStudentButton.addEventListener('click', function(){
 
@@ -122,8 +116,17 @@
             newStudentListItem.classList.toggle('selected')
         })
 
+        // remove student function
+    removeStudents.addEventListener('click', function(){
+        let studentsToDelete = document.querySelectorAll('.selected')
+        studentsToDelete.forEach( function (student) {
+            student.remove()
+        })
+        numberOfStudents = document.getElementsByTagName('li').length
+        studentCountSpanElement.innerHTML = numberOfStudents
 
     })
+})
 
 </script>
 
